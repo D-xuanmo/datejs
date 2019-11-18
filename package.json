@@ -2,6 +2,7 @@
   "name": "@xuanmo/datejs",
   "version": "1.0.3",
   "private": false,
+  "author": "xuanmos <me@xuanmo.xin>",
   "main": "dist/datejs.umd.min.js",
   "dependencies": {
     "ms": "^2.0.0"
