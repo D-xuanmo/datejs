@@ -9,7 +9,7 @@ class DateJS {
   }
 
   format (fmt = 'yyyy-MM-dd HH:mm:ss') {
-		const day = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    const day = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
     const obj = {
       'y+': this.date.getFullYear(),
       'M{2}': this._paddingZero(this.date.getMonth() + 1),
