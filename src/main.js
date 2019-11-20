@@ -24,8 +24,8 @@ class DateJS {
       'h': this.date.getHours() % 12,
       'm': this.date.getMinutes(),
       's': this.date.getSeconds(),
-			'CW': day[this.date.getDay()],
-			'W': this.date.getDay()
+      'CW': day[this.date.getDay()],
+      'W': this.date.getDay()
     }
     for (let [key, value] of Object.entries(obj)) {
       const regexp = new RegExp(`(${key})([^a-zA-Z])?`)
