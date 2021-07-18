@@ -1,7 +1,7 @@
 class DateJS {
   date: Date
 
-  constructor (date: number | string | Date = Date.now()) {
+  constructor (date: number | string | Date) {
     this.date = new Date(date)
   }
 
@@ -48,4 +48,4 @@ class DateJS {
   }
 }
 
-export default (date: number | string | Date) => new DateJS(date)
+export default (date?: number | string | Date | undefined) => new DateJS(date || Date.now())
