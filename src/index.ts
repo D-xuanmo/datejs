@@ -1,14 +1,25 @@
 class DateJS {
-  constructor (date = Date.now()) {
+  date: Date
+
+  constructor (date: number | string | Date = Date.now()) {
     this.date = new Date(date)
   }
 
-  // 小于10的填充0补位
-  _paddingZero (n) {
-    return n < 10 ? `0${n}` : n
+  /**
+   * 小于 10 的填充 0 补位
+   * @param {number} n
+   * @returns {string}
+   */
+  private _paddingZero(n: number): string {
+    return `${n < 10 ? `0${n}` : n}`
   }
 
-  format (fmt = 'yyyy-MM-dd HH:mm:ss') {
+  /**
+   * 格式化时间
+   * @param {string} formatter yyyy-MM-dd HH:mm:ss
+   * @returns {string} 2021-07-19 00:23:44
+   */
+  public format(formatter: string = 'yyyy-MM-dd HH:mm:ss'): string {
     const day = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
     const obj = {
       'y+': this.date.getFullYear(),
@@ -29,12 +40,12 @@ class DateJS {
     }
     for (let [key, value] of Object.entries(obj)) {
       const regexp = new RegExp(`(${key})([^a-zA-Z])?`)
-      if (regexp.test(fmt)) {
-        fmt = fmt.replace(RegExp.$1, obj[key])
+      if (regexp.test(formatter)) {
+        formatter = formatter.replace(RegExp.$1, `${value}`)
       }
     }
-    return fmt
+    return formatter
   }
 }
 
-export default date => new DateJS(date)
+export default (date: number | string | Date) => new DateJS(date)

@@ -1,25 +1,56 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
-import { uglify } from "rollup-plugin-uglify";
 import pkg from './package.json'
 
+import eslint from '@rollup/plugin-eslint'
+import typescript from '@rollup/plugin-typescript'
+import { uglify } from 'rollup-plugin-uglify'
+
+const baseConfig = {
+  input: 'src/index.ts',
+
+  plugins: [
+    eslint(),
+    typescript({ tsconfig: './tsconfig.json' })
+  ]
+}
+
 export default [
-	{
-		input: 'src/main.js',
-		output: {
-			name: pkg.name,
-			file: pkg.main,
-			format: 'umd'
-		},
-		external: ['ms'],
-		plugins: [
-			babel({
-				exclude: 'node_modules/**' // 只编译我们的源代码
-			}),
-			uglify(),
-			resolve(),
-			commonjs()
-		]
-	}
-];
+  {
+    ...baseConfig,
+    output: [
+      {
+        file: pkg.main,
+        format: 'cjs'
+      },
+      {
+        file: pkg.module,
+        format: 'es'
+      },
+      {
+        name: 'datejs',
+        file: pkg.browser,
+        format: 'umd'
+      }
+    ]
+  },
+  {
+    ...baseConfig,
+    output: [
+      {
+        file: 'dist/datejs.cjs.min.js',
+        format: 'cjs',
+        plugins: [uglify()]
+      },
+      {
+        file: 'dist/datejs.esm.min.js',
+        format: 'es',
+        plugins: [uglify()]
+      },
+      {
+        name: 'javascriptUtils',
+        file: 'dist/datejs.umd.min.js',
+        format: 'umd',
+        plugins: [uglify()]
+      }
+    ]
+  }
+]
