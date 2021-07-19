@@ -10,8 +10,8 @@ class DateJS {
    * @param {number} n
    * @returns {string}
    */
-  private _paddingZero(n: number): string {
-    return `${n < 10 ? `0${n}` : n}`
+  private _paddingZero(num: number): string {
+    return `${num}`.padStart(2, '0')
   }
 
   /**

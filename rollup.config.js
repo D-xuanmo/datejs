@@ -46,7 +46,7 @@ export default [
         plugins: [uglify()]
       },
       {
-        name: 'javascriptUtils',
+        name: 'datejs',
         file: 'dist/datejs.umd.min.js',
         format: 'umd',
         plugins: [uglify()]
