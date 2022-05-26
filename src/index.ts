@@ -1,8 +1,9 @@
 class DateJS {
   date: Date
 
-  constructor (date: number | string | Date) {
+  constructor(date: number | string | Date, offset?: number) {
     this.date = new Date(date)
+    if (offset) this.date = new Date(Number(this.date) + offset)
   }
 
   /**
@@ -63,4 +64,4 @@ class DateJS {
   }
 }
 
-export default (date?: number | string | Date | undefined) => new DateJS(date || Date.now())
+export default (date?: number | string | Date, offset?: number) => new DateJS(date || Date.now(), offset)
