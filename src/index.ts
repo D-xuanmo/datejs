@@ -17,10 +17,10 @@ class DateJS {
 
   /**
    * 格式化时间
-   * @param {string} formatter yyyy-MM-dd HH:mm:ss
-   * @returns {string} 2021-07-19 00:23:44
+   * @param {string} formatter yyyy/MM/dd HH:mm:ss
+   * @returns {string} 2021/07/19 00:23:44
    */
-  public format(formatter: string = 'yyyy-MM-dd HH:mm:ss'): string {
+  public format(formatter: string = 'yyyy/MM/dd HH:mm:ss'): string {
     const day = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
     const obj = {
       'y+': this.date.getFullYear(),
