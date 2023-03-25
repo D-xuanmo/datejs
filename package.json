@@ -1,11 +1,12 @@
 {
   "name": "@xuanmo/datejs",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "author": {
     "name": "xuanmo",
     "email": "me@xuanmo.xin"
   },
+  "type": "module",
   "main": "dist/datejs.cjs.js",
   "module": "dist/datejs.esm.js",
   "browser": "dist/datejs.umd.js",
