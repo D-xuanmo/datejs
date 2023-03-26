@@ -64,4 +64,6 @@ class DateJS {
   }
 }
 
-export default (date?: number | string | Date, offset?: number) => new DateJS(date || Date.now(), offset)
+const dateJS = (date?: number | string | Date, offset?: number) => new DateJS(date || Date.now(), offset)
+
+export default dateJS

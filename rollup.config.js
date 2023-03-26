@@ -26,7 +26,7 @@ export default [
         format: 'es'
       },
       {
-        name: 'datejs',
+        name: 'dateJS',
         file: pkg.browser,
         format: 'umd'
       }
@@ -36,18 +36,18 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: 'dist/datejs.cjs.min.js',
+        file: 'dist/dateJS.cjs.min.js',
         format: 'cjs',
         plugins: [uglify()]
       },
       {
-        file: 'dist/datejs.esm.min.js',
+        file: 'dist/dateJS.esm.min.js',
         format: 'es',
         plugins: [uglify()]
       },
       {
-        name: 'datejs',
-        file: 'dist/datejs.umd.min.js',
+        name: 'dateJS',
+        file: 'dist/dateJS.umd.min.js',
         format: 'umd',
         plugins: [uglify()]
       }

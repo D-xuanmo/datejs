@@ -1,19 +1,19 @@
 {
   "name": "@xuanmo/datejs",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "author": {
     "name": "xuanmo",
     "email": "me@xuanmo.xin"
   },
   "type": "module",
-  "main": "dist/datejs.cjs.js",
-  "module": "dist/datejs.esm.js",
-  "browser": "dist/datejs.umd.js",
+  "main": "dist/dateJS.cjs.js",
+  "module": "dist/dateJS.esm.js",
+  "browser": "dist/dateJS.umd.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "npm run clear && rollup -c -w",
-    "build": "npm run clear && rollup -c",
+    "build": "npm run clear && rollup -c --exports auto",
     "clear": "rimraf dist",
     "lint": "eslint src/**/*.ts --fix"
   },
