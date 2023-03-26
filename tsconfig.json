@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "types",
     "sourceMap": false,
     "target": "es5",
     "module": "esnext",
@@ -16,8 +16,6 @@
     "lib": ["esnext", "dom"],
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationMap": false,
-    "declarationDir": "types",
     "listEmittedFiles": true,
     "noImplicitThis": false
   },
